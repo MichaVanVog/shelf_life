@@ -43,6 +43,7 @@ namespace shelf_life_Form_App
             this.FoundMonthsLabel = new System.Windows.Forms.Label();
             this.ClientsMinimumAgeLabel = new System.Windows.Forms.Label();
             this.BirthdaysLabel = new System.Windows.Forms.Label();
+            this.KodexLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // DateOfManufactureTextBox
@@ -173,12 +174,23 @@ namespace shelf_life_Form_App
             this.BirthdaysLabel.Size = new System.Drawing.Size(0, 23);
             this.BirthdaysLabel.TabIndex = 12;
             // 
+            // KodexLabel
+            // 
+            this.KodexLabel.AutoSize = true;
+            this.KodexLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.KodexLabel.Location = new System.Drawing.Point(131, 483);
+            this.KodexLabel.Name = "KodexLabel";
+            this.KodexLabel.Size = new System.Drawing.Size(675, 23);
+            this.KodexLabel.TabIndex = 13;
+            this.KodexLabel.Text = " Согласно ст. 191 и ст. 192 ГК РФ продажа алкоголя в ДЕНЬ РОЖДЕНИЯ запрещена.";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkOrange;
             this.ClientSize = new System.Drawing.Size(1299, 560);
+            this.Controls.Add(this.KodexLabel);
             this.Controls.Add(this.BirthdaysLabel);
             this.Controls.Add(this.ClientsMinimumAgeLabel);
             this.Controls.Add(this.FoundMonthsLabel);
@@ -216,6 +228,7 @@ namespace shelf_life_Form_App
         private System.Windows.Forms.Label FoundMonthsLabel;
         private System.Windows.Forms.Label ClientsMinimumAgeLabel;
         private System.Windows.Forms.Label BirthdaysLabel;
+        private System.Windows.Forms.Label KodexLabel;
     }
 }
 
