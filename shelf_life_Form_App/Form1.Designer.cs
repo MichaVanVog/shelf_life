@@ -30,7 +30,6 @@ namespace shelf_life_Form_App
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.DateOfManufactureTextBox = new System.Windows.Forms.TextBox();
             this.titleLabel = new System.Windows.Forms.Label();
             this.thirtyDaysLabel = new System.Windows.Forms.Label();
             this.threeMonthsLabel = new System.Windows.Forms.Label();
@@ -50,18 +49,10 @@ namespace shelf_life_Form_App
             this.MonthsFromManufactoringLabel = new System.Windows.Forms.Label();
             this.DaysFromManufactoringTextBox = new System.Windows.Forms.TextBox();
             this.MonthsFromManufactoringTextBox = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.DateOfManufactureTextBox = new System.Windows.Forms.MaskedTextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // DateOfManufactureTextBox
-            // 
-            this.DateOfManufactureTextBox.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.DateOfManufactureTextBox.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.DateOfManufactureTextBox.Location = new System.Drawing.Point(131, 347);
-            this.DateOfManufactureTextBox.Name = "DateOfManufactureTextBox";
-            this.DateOfManufactureTextBox.PlaceholderText = "00.00.0000";
-            this.DateOfManufactureTextBox.Size = new System.Drawing.Size(162, 30);
-            this.DateOfManufactureTextBox.TabIndex = 0;
-            this.DateOfManufactureTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // titleLabel
             // 
@@ -257,12 +248,34 @@ namespace shelf_life_Form_App
             this.MonthsFromManufactoringTextBox.TabIndex = 19;
             this.MonthsFromManufactoringTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(847, 137);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(300, 300);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 20;
+            this.pictureBox1.TabStop = false;
+            // 
+            // DateOfManufactureTextBox
+            // 
+            this.DateOfManufactureTextBox.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.DateOfManufactureTextBox.Location = new System.Drawing.Point(132, 350);
+            this.DateOfManufactureTextBox.Mask = "00/00/0000";
+            this.DateOfManufactureTextBox.Name = "DateOfManufactureTextBox";
+            this.DateOfManufactureTextBox.Size = new System.Drawing.Size(162, 30);
+            this.DateOfManufactureTextBox.TabIndex = 21;
+            this.DateOfManufactureTextBox.ValidatingType = typeof(System.DateTime);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkOrange;
             this.ClientSize = new System.Drawing.Size(1299, 560);
+            this.Controls.Add(this.DateOfManufactureTextBox);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.MonthsFromManufactoringTextBox);
             this.Controls.Add(this.DaysFromManufactoringTextBox);
             this.Controls.Add(this.MonthsFromManufactoringLabel);
@@ -282,19 +295,17 @@ namespace shelf_life_Form_App
             this.Controls.Add(this.threeMonthsLabel);
             this.Controls.Add(this.thirtyDaysLabel);
             this.Controls.Add(this.titleLabel);
-            this.Controls.Add(this.DateOfManufactureTextBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Пивная Корова";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox DateOfManufactureTextBox;
         private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.Label thirtyDaysLabel;
         private System.Windows.Forms.Label threeMonthsLabel;
@@ -314,6 +325,8 @@ namespace shelf_life_Form_App
         private System.Windows.Forms.Label MonthsFromManufactoringLabel;
         private System.Windows.Forms.TextBox DaysFromManufactoringTextBox;
         private System.Windows.Forms.TextBox MonthsFromManufactoringTextBox;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.MaskedTextBox DateOfManufactureTextBox;
     }
 }
 

@@ -32,7 +32,7 @@ namespace shelf_life_Form_App
         {
             try
             {
-                string[] dateNumbers = Convert.ToString(DateOfManufactureTextBox.Text).Split('.', ' ', ',', '-', '_');
+                string[] dateNumbers = Convert.ToString(DateOfManufactureTextBox.Text).Split('.', ' ', ',', '-', '_', '/');
                 DateTime dateFromDateNambers = new(Convert.ToInt32(dateNumbers[2]), Convert.ToInt32(dateNumbers[1]), Convert.ToInt32(dateNumbers[0]));
                 var successDaysText = Double.TryParse(DaysFromManufactoringTextBox.Text, out double daysFromManufactoring);
                 if (successDaysText)
