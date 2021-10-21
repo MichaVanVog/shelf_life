@@ -51,6 +51,11 @@ namespace shelf_life_Form_App
             this.MonthsFromManufactoringTextBox = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.DateOfManufactureTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.ShelfLifeTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.PercentOfShelfLifeLabel = new System.Windows.Forms.Label();
+            this.percentOfFoundDaysLabel = new System.Windows.Forms.Label();
+            this.percentOfFoundMonthsLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -129,17 +134,17 @@ namespace shelf_life_Form_App
             // 
             this.searchDaysLabel.AutoSize = true;
             this.searchDaysLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.searchDaysLabel.Location = new System.Drawing.Point(131, 298);
+            this.searchDaysLabel.Location = new System.Drawing.Point(131, 305);
             this.searchDaysLabel.Name = "searchDaysLabel";
-            this.searchDaysLabel.Size = new System.Drawing.Size(622, 23);
+            this.searchDaysLabel.Size = new System.Drawing.Size(239, 23);
             this.searchDaysLabel.TabIndex = 8;
-            this.searchDaysLabel.Text = "В этом окне можно задать дату производства и получить срок годности:";
+            this.searchDaysLabel.Text = "Получение срока годности:";
             // 
             // FoundDaysLabel
             // 
             this.FoundDaysLabel.AutoSize = true;
             this.FoundDaysLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.FoundDaysLabel.Location = new System.Drawing.Point(477, 350);
+            this.FoundDaysLabel.Location = new System.Drawing.Point(541, 416);
             this.FoundDaysLabel.Name = "FoundDaysLabel";
             this.FoundDaysLabel.Size = new System.Drawing.Size(0, 23);
             this.FoundDaysLabel.TabIndex = 9;
@@ -148,7 +153,7 @@ namespace shelf_life_Form_App
             // 
             this.FoundMonthsLabel.AutoSize = true;
             this.FoundMonthsLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.FoundMonthsLabel.Location = new System.Drawing.Point(477, 415);
+            this.FoundMonthsLabel.Location = new System.Drawing.Point(541, 453);
             this.FoundMonthsLabel.Name = "FoundMonthsLabel";
             this.FoundMonthsLabel.Size = new System.Drawing.Size(0, 23);
             this.FoundMonthsLabel.TabIndex = 10;
@@ -157,7 +162,7 @@ namespace shelf_life_Form_App
             // 
             this.ClientsMinimumAgeLabel.AutoSize = true;
             this.ClientsMinimumAgeLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ClientsMinimumAgeLabel.Location = new System.Drawing.Point(132, 461);
+            this.ClientsMinimumAgeLabel.Location = new System.Drawing.Point(131, 557);
             this.ClientsMinimumAgeLabel.Name = "ClientsMinimumAgeLabel";
             this.ClientsMinimumAgeLabel.Size = new System.Drawing.Size(550, 23);
             this.ClientsMinimumAgeLabel.TabIndex = 11;
@@ -167,7 +172,7 @@ namespace shelf_life_Form_App
             // 
             this.BirthdaysLabel.AutoSize = true;
             this.BirthdaysLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.BirthdaysLabel.Location = new System.Drawing.Point(132, 484);
+            this.BirthdaysLabel.Location = new System.Drawing.Point(131, 580);
             this.BirthdaysLabel.Name = "BirthdaysLabel";
             this.BirthdaysLabel.Size = new System.Drawing.Size(132, 23);
             this.BirthdaysLabel.TabIndex = 12;
@@ -177,7 +182,7 @@ namespace shelf_life_Form_App
             // 
             this.KodexLabel.AutoSize = true;
             this.KodexLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.KodexLabel.Location = new System.Drawing.Point(131, 507);
+            this.KodexLabel.Location = new System.Drawing.Point(130, 603);
             this.KodexLabel.Name = "KodexLabel";
             this.KodexLabel.Size = new System.Drawing.Size(670, 23);
             this.KodexLabel.TabIndex = 13;
@@ -188,9 +193,9 @@ namespace shelf_life_Form_App
             this.CalculateButton.BackColor = System.Drawing.Color.MediumSlateBlue;
             this.CalculateButton.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.CalculateButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.CalculateButton.Location = new System.Drawing.Point(131, 397);
+            this.CalculateButton.Location = new System.Drawing.Point(130, 483);
             this.CalculateButton.Name = "CalculateButton";
-            this.CalculateButton.Size = new System.Drawing.Size(162, 45);
+            this.CalculateButton.Size = new System.Drawing.Size(353, 44);
             this.CalculateButton.TabIndex = 14;
             this.CalculateButton.Text = "рассчитать";
             this.CalculateButton.UseVisualStyleBackColor = false;
@@ -200,60 +205,60 @@ namespace shelf_life_Form_App
             // 
             this.ManufactoredDayLabel.AutoSize = true;
             this.ManufactoredDayLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ManufactoredDayLabel.Location = new System.Drawing.Point(132, 321);
+            this.ManufactoredDayLabel.Location = new System.Drawing.Point(131, 341);
             this.ManufactoredDayLabel.Name = "ManufactoredDayLabel";
-            this.ManufactoredDayLabel.Size = new System.Drawing.Size(161, 23);
+            this.ManufactoredDayLabel.Size = new System.Drawing.Size(165, 23);
             this.ManufactoredDayLabel.TabIndex = 15;
-            this.ManufactoredDayLabel.Text = "Дата производства";
+            this.ManufactoredDayLabel.Text = "Дата производства:";
             // 
             // DaysFromManufactoringLabel
             // 
             this.DaysFromManufactoringLabel.AutoSize = true;
             this.DaysFromManufactoringLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.DaysFromManufactoringLabel.Location = new System.Drawing.Point(344, 321);
+            this.DaysFromManufactoringLabel.Location = new System.Drawing.Point(133, 413);
             this.DaysFromManufactoringLabel.Name = "DaysFromManufactoringLabel";
-            this.DaysFromManufactoringLabel.Size = new System.Drawing.Size(110, 23);
+            this.DaysFromManufactoringLabel.Size = new System.Drawing.Size(224, 23);
             this.DaysFromManufactoringLabel.TabIndex = 16;
-            this.DaysFromManufactoringLabel.Text = "Дни от даты:";
+            this.DaysFromManufactoringLabel.Text = "Дни от даты производства:";
             // 
             // MonthsFromManufactoringLabel
             // 
             this.MonthsFromManufactoringLabel.AutoSize = true;
             this.MonthsFromManufactoringLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.MonthsFromManufactoringLabel.Location = new System.Drawing.Point(330, 386);
+            this.MonthsFromManufactoringLabel.Location = new System.Drawing.Point(133, 450);
             this.MonthsFromManufactoringLabel.Name = "MonthsFromManufactoringLabel";
-            this.MonthsFromManufactoringLabel.Size = new System.Drawing.Size(141, 23);
+            this.MonthsFromManufactoringLabel.Size = new System.Drawing.Size(255, 23);
             this.MonthsFromManufactoringLabel.TabIndex = 17;
-            this.MonthsFromManufactoringLabel.Text = "Месяцы от даты:";
+            this.MonthsFromManufactoringLabel.Text = "Месяцы от даты производства:";
             // 
             // DaysFromManufactoringTextBox
             // 
             this.DaysFromManufactoringTextBox.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.DaysFromManufactoringTextBox.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.DaysFromManufactoringTextBox.Location = new System.Drawing.Point(344, 347);
+            this.DaysFromManufactoringTextBox.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.DaysFromManufactoringTextBox.Location = new System.Drawing.Point(386, 413);
             this.DaysFromManufactoringTextBox.Name = "DaysFromManufactoringTextBox";
             this.DaysFromManufactoringTextBox.PlaceholderText = "000";
-            this.DaysFromManufactoringTextBox.Size = new System.Drawing.Size(110, 30);
+            this.DaysFromManufactoringTextBox.Size = new System.Drawing.Size(97, 30);
             this.DaysFromManufactoringTextBox.TabIndex = 18;
             this.DaysFromManufactoringTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // MonthsFromManufactoringTextBox
             // 
             this.MonthsFromManufactoringTextBox.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.MonthsFromManufactoringTextBox.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.MonthsFromManufactoringTextBox.Location = new System.Drawing.Point(330, 412);
+            this.MonthsFromManufactoringTextBox.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.MonthsFromManufactoringTextBox.Location = new System.Drawing.Point(386, 450);
             this.MonthsFromManufactoringTextBox.Name = "MonthsFromManufactoringTextBox";
             this.MonthsFromManufactoringTextBox.PlaceholderText = "00";
-            this.MonthsFromManufactoringTextBox.Size = new System.Drawing.Size(141, 30);
+            this.MonthsFromManufactoringTextBox.Size = new System.Drawing.Size(97, 30);
             this.MonthsFromManufactoringTextBox.TabIndex = 19;
             this.MonthsFromManufactoringTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(847, 137);
+            this.pictureBox1.Location = new System.Drawing.Point(1237, 183);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(300, 300);
+            this.pictureBox1.Size = new System.Drawing.Size(384, 384);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 20;
             this.pictureBox1.TabStop = false;
@@ -261,19 +266,74 @@ namespace shelf_life_Form_App
             // DateOfManufactureTextBox
             // 
             this.DateOfManufactureTextBox.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.DateOfManufactureTextBox.Location = new System.Drawing.Point(132, 350);
+            this.DateOfManufactureTextBox.Location = new System.Drawing.Point(386, 341);
             this.DateOfManufactureTextBox.Mask = "00/00/0000";
             this.DateOfManufactureTextBox.Name = "DateOfManufactureTextBox";
-            this.DateOfManufactureTextBox.Size = new System.Drawing.Size(162, 30);
+            this.DateOfManufactureTextBox.Size = new System.Drawing.Size(97, 30);
             this.DateOfManufactureTextBox.TabIndex = 21;
+            this.DateOfManufactureTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.DateOfManufactureTextBox.ValidatingType = typeof(System.DateTime);
+            // 
+            // ShelfLifeTextBox
+            // 
+            this.ShelfLifeTextBox.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ShelfLifeTextBox.Location = new System.Drawing.Point(386, 377);
+            this.ShelfLifeTextBox.Mask = "00/00/0000";
+            this.ShelfLifeTextBox.Name = "ShelfLifeTextBox";
+            this.ShelfLifeTextBox.Size = new System.Drawing.Size(97, 30);
+            this.ShelfLifeTextBox.TabIndex = 24;
+            this.ShelfLifeTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ShelfLifeTextBox.ValidatingType = typeof(System.DateTime);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(133, 374);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(129, 23);
+            this.label2.TabIndex = 26;
+            this.label2.Text = "Срок годности:";
+            // 
+            // PercentOfShelfLifeLabel
+            // 
+            this.PercentOfShelfLifeLabel.AutoSize = true;
+            this.PercentOfShelfLifeLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PercentOfShelfLifeLabel.Location = new System.Drawing.Point(540, 380);
+            this.PercentOfShelfLifeLabel.Name = "PercentOfShelfLifeLabel";
+            this.PercentOfShelfLifeLabel.Size = new System.Drawing.Size(0, 23);
+            this.PercentOfShelfLifeLabel.TabIndex = 27;
+            // 
+            // percentOfFoundDaysLabel
+            // 
+            this.percentOfFoundDaysLabel.AutoSize = true;
+            this.percentOfFoundDaysLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.percentOfFoundDaysLabel.Location = new System.Drawing.Point(845, 416);
+            this.percentOfFoundDaysLabel.Name = "percentOfFoundDaysLabel";
+            this.percentOfFoundDaysLabel.Size = new System.Drawing.Size(0, 23);
+            this.percentOfFoundDaysLabel.TabIndex = 28;
+            // 
+            // percentOfFoundMonthsLabel
+            // 
+            this.percentOfFoundMonthsLabel.AutoSize = true;
+            this.percentOfFoundMonthsLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.percentOfFoundMonthsLabel.Location = new System.Drawing.Point(845, 450);
+            this.percentOfFoundMonthsLabel.Name = "percentOfFoundMonthsLabel";
+            this.percentOfFoundMonthsLabel.Size = new System.Drawing.Size(0, 23);
+            this.percentOfFoundMonthsLabel.TabIndex = 29;
             // 
             // Form1
             // 
+            this.AcceptButton = this.CalculateButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkOrange;
-            this.ClientSize = new System.Drawing.Size(1299, 560);
+            this.ClientSize = new System.Drawing.Size(1661, 664);
+            this.Controls.Add(this.percentOfFoundMonthsLabel);
+            this.Controls.Add(this.percentOfFoundDaysLabel);
+            this.Controls.Add(this.PercentOfShelfLifeLabel);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.ShelfLifeTextBox);
             this.Controls.Add(this.DateOfManufactureTextBox);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.MonthsFromManufactoringTextBox);
@@ -297,7 +357,9 @@ namespace shelf_life_Form_App
             this.Controls.Add(this.titleLabel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Пивная Корова";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -327,6 +389,11 @@ namespace shelf_life_Form_App
         private System.Windows.Forms.TextBox MonthsFromManufactoringTextBox;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.MaskedTextBox DateOfManufactureTextBox;
+        private System.Windows.Forms.MaskedTextBox ShelfLifeTextBox;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label PercentOfShelfLifeLabel;
+        private System.Windows.Forms.Label percentOfFoundDaysLabel;
+        private System.Windows.Forms.Label percentOfFoundMonthsLabel;
     }
 }
 

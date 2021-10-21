@@ -29,26 +29,57 @@ namespace shelf_life_Form_App
         }
 
         private void CalculateButton_Click(object sender, EventArgs e)
-        {
-            try
+        {            
+            var validMnufactureTextBox = DateTime.TryParse(DateOfManufactureTextBox.Text, out var dateFromDateNambersOfManufactoring);
+            if (validMnufactureTextBox)
             {
-                string[] dateNumbers = Convert.ToString(DateOfManufactureTextBox.Text).Split('.', ' ', ',', '-', '_', '/');
-                DateTime dateFromDateNambers = new(Convert.ToInt32(dateNumbers[2]), Convert.ToInt32(dateNumbers[1]), Convert.ToInt32(dateNumbers[0]));
-                var successDaysText = Double.TryParse(DaysFromManufactoringTextBox.Text, out double daysFromManufactoring);
-                if (successDaysText)
+                //get percent of the rest of shelf life
+                var validShelfLifeTextBox = DateTime.TryParse(ShelfLifeTextBox.Text, out var dateFromDateNumbersOfShelfLife);
+                if (!validShelfLifeTextBox)
                 {
-                    FoundDaysLabel.Text = Convert.ToString(dateFromDateNambers.AddDays(daysFromManufactoring).ToShortDateString());
+ 
+                    dateFromDateNumbersOfShelfLife.ToUniversalTime();
+                    PercentOfShelfLifeLabel.Text = "";
                 }
-                var successMonthsText = Int32.TryParse(MonthsFromManufactoringTextBox.Text, out int monthsFromManufactoring);
-                if (successMonthsText)
+                else
                 {
-                    FoundMonthsLabel.Text = Convert.ToString(dateFromDateNambers.AddMonths(monthsFromManufactoring).ToShortDateString());
+                    TimeSpan fullShelfLife = dateFromDateNumbersOfShelfLife - dateFromDateNambersOfManufactoring;
+                    TimeSpan currentShelfLife = dateFromDateNumbersOfShelfLife - DateTime.Now;
+                    if ((currentShelfLife.Days * 100 / fullShelfLife.Days) < 0)
+                    {
+                        PercentOfShelfLifeLabel.Text = "Товар просрочен";
+                    }
+                    else PercentOfShelfLifeLabel.Text = Convert.ToString($"Остаточный срок годности: {currentShelfLife.Days * 100 / fullShelfLife.Days}%");
                 }
             }
-            catch (Exception)
+            else MessageBox.Show("Ведите дату производства", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            var successDaysText = Double.TryParse(DaysFromManufactoringTextBox.Text, out double daysFromManufactoring);
+            if (successDaysText)
             {
-                MessageBox.Show("Необходимо ввести дату в формате дд.мм.гггг", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                var foundDays = Convert.ToString($"Срок годности: {dateFromDateNambersOfManufactoring.AddDays(daysFromManufactoring).ToShortDateString()}");
+                FoundDaysLabel.Text = foundDays;
+                TimeSpan fullShelfLife = dateFromDateNambersOfManufactoring.AddDays(daysFromManufactoring) - dateFromDateNambersOfManufactoring;
+                TimeSpan currentShelfLife = dateFromDateNambersOfManufactoring.AddDays(daysFromManufactoring) - DateTime.Now;
+                if ((currentShelfLife.Days * 100 / fullShelfLife.Days) < 0)
+                {
+                    percentOfFoundDaysLabel.Text = Convert.ToString("Товар просрочен");
+                }
+                else percentOfFoundDaysLabel.Text = Convert.ToString($"Остаточный срок годности: {currentShelfLife.Days * 100 / fullShelfLife.Days}%");
             }
+            var successMonthsText = Int32.TryParse(MonthsFromManufactoringTextBox.Text, out int monthsFromManufactoring);
+            if (successMonthsText)
+            {
+                FoundMonthsLabel.Text = Convert.ToString($"Срок годности: {dateFromDateNambersOfManufactoring.AddMonths(monthsFromManufactoring).ToShortDateString()}");
+                TimeSpan fullShelfLife = dateFromDateNambersOfManufactoring.AddMonths(monthsFromManufactoring) - dateFromDateNambersOfManufactoring;
+                TimeSpan currentShelfLife = dateFromDateNambersOfManufactoring.AddMonths(monthsFromManufactoring) - DateTime.Now;
+                if ((currentShelfLife.Days * 100 / fullShelfLife.Days) < 0)
+                {
+                    percentOfFoundMonthsLabel.Text = Convert.ToString("Товар просрочен");
+                }
+                else percentOfFoundMonthsLabel.Text = Convert.ToString($"Остаточный срок годности: {currentShelfLife.Days * 100 / fullShelfLife.Days}%");
+            }
+
         }
     }
 }
