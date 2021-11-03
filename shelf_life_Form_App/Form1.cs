@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace shelf_life_Form_App
@@ -18,14 +11,13 @@ namespace shelf_life_Form_App
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            var dateToday = DateTime.Now;
-            thirtyDaysLabel.Text = $"90 дней: {dateToday.AddDays(-90).ToLongDateString()}";
-            threeMonthsLabel.Text = $"3 месяца: {dateToday.AddMonths(-3).ToLongDateString()}";
-            oneHundredThirtyFiveDaysLabel.Text = $"135 дней: {dateToday.AddDays(-135).ToLongDateString()}";
-            oneHundredFiftyDaysLabel.Text = $"150 дней: {dateToday.AddDays(-150).ToLongDateString()}";
-            oneHundredEightyDaysLabel.Text = $"180 дней: {dateToday.AddDays(-180).ToLongDateString()}";
-            sixMonthsLabel.Text = $"6 месяцев: {dateToday.AddMonths(-6).ToLongDateString()}";
-            BirthdaysLabel.Text = $"{dateToday.AddDays(1).AddYears(-18).ToLongDateString()}";
+            thirtyDaysLabel.Text = $"90 дней: {DateTime.Now.AddDays(-90).ToLongDateString()}";
+            threeMonthsLabel.Text = $"3 месяца: {DateTime.Now.AddMonths(-3).ToLongDateString()}";
+            oneHundredThirtyFiveDaysLabel.Text = $"135 дней: {DateTime.Now.AddDays(-135).ToLongDateString()}";
+            oneHundredFiftyDaysLabel.Text = $"150 дней: {DateTime.Now.AddDays(-150).ToLongDateString()}";
+            oneHundredEightyDaysLabel.Text = $"180 дней: {DateTime.Now.AddDays(-180).ToLongDateString()}";
+            sixMonthsLabel.Text = $"6 месяцев: {DateTime.Now.AddMonths(-6).ToLongDateString()}";
+            BirthdaysLabel.Text = $"{DateTime.Now.AddDays(1).AddYears(-18).ToLongDateString()}";
         }
 
         private void CalculateButton_Click(object sender, EventArgs e)
@@ -57,8 +49,7 @@ namespace shelf_life_Form_App
             var successDaysText = Double.TryParse(DaysFromManufactoringTextBox.Text, out double daysFromManufactoring);
             if (successDaysText)
             {
-                var foundDays = Convert.ToString($"Срок годности: {dateFromDateNambersOfManufactoring.AddDays(daysFromManufactoring).ToShortDateString()}");
-                FoundDaysLabel.Text = foundDays;
+                FoundDaysLabel.Text = Convert.ToString($"Срок годности: {dateFromDateNambersOfManufactoring.AddDays(daysFromManufactoring).ToShortDateString()}");
                 TimeSpan fullShelfLife = dateFromDateNambersOfManufactoring.AddDays(daysFromManufactoring) - dateFromDateNambersOfManufactoring;
                 TimeSpan currentShelfLife = dateFromDateNambersOfManufactoring.AddDays(daysFromManufactoring) - DateTime.Now;
                 if ((currentShelfLife.Days * 100 / fullShelfLife.Days) < 0)

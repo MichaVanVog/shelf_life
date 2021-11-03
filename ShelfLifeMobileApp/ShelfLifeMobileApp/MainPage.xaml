@@ -1,24 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ShelfLifeMobileApp.MainPage">
+             x:Class="ShelfLifeMobileApp.MainPage"
+             BackgroundColor="DarkOrange">
 
     <StackLayout>
-        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-            <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
-        </Frame>
-        <Label Text="Start developing now" FontSize="Title" Padding="30,10,30,10"/>
-        <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="30,0,30,0"/>
-        <Label FontSize="16" Padding="30,24,30,0">
-            <Label.FormattedText>
-                <FormattedString>
-                    <FormattedString.Spans>
-                        <Span Text="Learn more at "/>
-                        <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
-                    </FormattedString.Spans>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
+        <Label HorizontalTextAlignment="Center" FontAttributes="Bold" Style="{StaticResource TitleStyle}">Получение срока годности</Label>
+        <Label HorizontalTextAlignment="Center" Style="{StaticResource SubtitleStyle}">Введите дату производства:</Label>
+        <DatePicker x:Name="DateOfManufactureTextBox" Format="dd.MM.yyyy" MaximumDate="2049.12.31" MinimumDate="2015.01.01" HorizontalOptions="Center" FontAttributes="Bold" />
+        <Label HorizontalTextAlignment="Center" Style="{StaticResource SubtitleStyle}">Если надо подсчитать остаточный срок годности, то введите дату срока гоности:</Label>
+        <DatePicker x:Name="ShelfLifeTextBox" Format="dd.MM.yyyy" MaximumDate="2049.12.31" MinimumDate="2015.01.01" HorizontalOptions="Center" FontAttributes="Bold" />
+        <Label x:Name="PercentOfShelfLifeLabel" HorizontalTextAlignment="Center" Style="{StaticResource SubtitleStyle}">тут будет число</Label>
+        <Label HorizontalTextAlignment="Center" Style="{StaticResource SubtitleStyle}">Для подсчета даты окончания срока годности введите дни:</Label>
+        <Entry x:Name="DaysFromManufactoringTextBox" Placeholder="дни" PlaceholderColor="Gray" Keyboard="Numeric" FontAttributes="Bold" HorizontalOptions="Center" MaxLength="3"/>
+        <Label x:Name="FoundDaysLabel" HorizontalTextAlignment="Center" Style="{StaticResource SubtitleStyle}">тут будет число</Label>
+        <Label x:Name="percentOfFoundDaysLabel" HorizontalTextAlignment="Center" Style="{StaticResource SubtitleStyle}">тут будет число</Label>
+        <Label HorizontalTextAlignment="Center" Style="{StaticResource SubtitleStyle}">Для подсчета даты окончания срока годности введите месяцы:</Label>
+        <Entry x:Name="CalculateButton" Placeholder="месяцы" PlaceholderColor="Gray" Keyboard="Numeric" FontAttributes="Bold" HorizontalOptions="Center"/>
+        <Label x:Name="FoundMonthsLabel" HorizontalTextAlignment="Center" Style="{StaticResource SubtitleStyle}">тут будет число</Label>
+        <Label x:Name="percentOfFoundMonthsLabel" HorizontalTextAlignment="Center" Style="{StaticResource SubtitleStyle}">тут будет число</Label>
+
+        <Label HorizontalTextAlignment="Center" FontAttributes="Bold" Style="{StaticResource TitleStyle}">Дата минимально разрешеного возраста для покупки алкоголя:</Label>
+        <Label x:Name="BirthdaysLabel"/>
+        <Label HorizontalTextAlignment="Center" Style="{StaticResource BodyStyle}">Согласно ст. 191 и ст. 192 ГК РФ продажа алкоголя в ДЕНЬ РОЖДЕНИЯ запрещена.</Label>
     </StackLayout>
 
 </ContentPage>

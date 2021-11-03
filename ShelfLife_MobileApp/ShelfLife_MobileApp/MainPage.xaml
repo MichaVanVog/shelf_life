@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShelfLife_MobileApp.MainPage" BackgroundColor="DarkOrange">
+
+    <ScrollView>
+        <StackLayout x:Name="stackLayout" Spacing="10" Padding="5">
+            <Label x:Name="searchDaysLabel" FontSize="Title" HorizontalTextAlignment="Center" FontAttributes="Bold">Получение срока годности</Label>
+            <Label HorizontalTextAlignment="Center">Введите дату производства:</Label>
+            <DatePicker x:Name="DateOfManufactureTextBox" Format="dd.MM.yyyy" MaximumDate="2049.12.31" MinimumDate="2015.01.01" HorizontalOptions="Center" FontAttributes="Bold" />
+            <Label HorizontalTextAlignment="Center">Если надо подсчитать остаточный срок годности, то введите дату срока гоности:</Label>
+            <DatePicker x:Name="ShelfLifeTextBox" IsVisible="False" Format="dd.MM.yyyy" MaximumDate="2049.12.31" MinimumDate="2015.01.01" HorizontalOptions="Center" FontAttributes="Bold" />
+            <Label x:Name="PercentOfShelfLifeLabel" IsVisible="False" HorizontalTextAlignment="Center"/>
+            <Label HorizontalTextAlignment="Center">Для подсчета даты окончания срока годности введите дни:</Label>
+            <Entry x:Name="DaysFromManufactoringTextBox" IsVisible="False" HorizontalTextAlignment="Center" Placeholder="дни" PlaceholderColor="Gray" Keyboard="Numeric" FontAttributes="Bold" HorizontalOptions="Center" MaxLength="3"/>
+            <Label x:Name="FoundDaysLabel" IsVisible="False" HorizontalTextAlignment="Center"/>
+            <Label x:Name="percentOfFoundDaysLabel" IsVisible="False" HorizontalTextAlignment="Center"/>
+            <Label HorizontalTextAlignment="Center">Для подсчета даты окончания срока годности введите месяцы:</Label>
+            <Entry x:Name="MonthsFromManufactoringTextBox" IsVisible="False" HorizontalTextAlignment="Center" Placeholder="месяцы" PlaceholderColor="Gray" Keyboard="Numeric" FontAttributes="Bold" HorizontalOptions="Center" MaxLength="3"/>
+            <Label x:Name="FoundMonthsLabel" IsVisible="False" HorizontalTextAlignment="Center"/>
+            <Label x:Name="percentOfFoundMonthsLabel" IsVisible="False" HorizontalTextAlignment="Center"/>
+            <Label HorizontalTextAlignment="Center" FontSize="Title" FontAttributes="Bold">Дата минимально разрешеного возраста для покупки алкоголя:</Label>
+            <Label x:Name="BirthdaysLabel" FontSize="Subtitle" FontAttributes="Bold"  HorizontalTextAlignment="Center"/>
+            <Label HorizontalTextAlignment="Center">Согласно ст. 191 и ст. 192 ГК РФ продажа алкоголя в ДЕНЬ РОЖДЕНИЯ запрещена.</Label>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
+        

@@ -144,7 +144,7 @@ namespace shelf_life_Form_App
             // 
             this.FoundDaysLabel.AutoSize = true;
             this.FoundDaysLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.FoundDaysLabel.Location = new System.Drawing.Point(541, 416);
+            this.FoundDaysLabel.Location = new System.Drawing.Point(541, 409);
             this.FoundDaysLabel.Name = "FoundDaysLabel";
             this.FoundDaysLabel.Size = new System.Drawing.Size(0, 23);
             this.FoundDaysLabel.TabIndex = 9;
@@ -153,7 +153,7 @@ namespace shelf_life_Form_App
             // 
             this.FoundMonthsLabel.AutoSize = true;
             this.FoundMonthsLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.FoundMonthsLabel.Location = new System.Drawing.Point(541, 453);
+            this.FoundMonthsLabel.Location = new System.Drawing.Point(541, 446);
             this.FoundMonthsLabel.Name = "FoundMonthsLabel";
             this.FoundMonthsLabel.Size = new System.Drawing.Size(0, 23);
             this.FoundMonthsLabel.TabIndex = 10;
@@ -235,7 +235,7 @@ namespace shelf_life_Form_App
             // 
             this.DaysFromManufactoringTextBox.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.DaysFromManufactoringTextBox.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.DaysFromManufactoringTextBox.Location = new System.Drawing.Point(386, 413);
+            this.DaysFromManufactoringTextBox.Location = new System.Drawing.Point(386, 406);
             this.DaysFromManufactoringTextBox.Name = "DaysFromManufactoringTextBox";
             this.DaysFromManufactoringTextBox.PlaceholderText = "000";
             this.DaysFromManufactoringTextBox.Size = new System.Drawing.Size(97, 30);
@@ -246,7 +246,7 @@ namespace shelf_life_Form_App
             // 
             this.MonthsFromManufactoringTextBox.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.MonthsFromManufactoringTextBox.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.MonthsFromManufactoringTextBox.Location = new System.Drawing.Point(386, 450);
+            this.MonthsFromManufactoringTextBox.Location = new System.Drawing.Point(386, 443);
             this.MonthsFromManufactoringTextBox.Name = "MonthsFromManufactoringTextBox";
             this.MonthsFromManufactoringTextBox.PlaceholderText = "00";
             this.MonthsFromManufactoringTextBox.Size = new System.Drawing.Size(97, 30);
@@ -266,7 +266,7 @@ namespace shelf_life_Form_App
             // DateOfManufactureTextBox
             // 
             this.DateOfManufactureTextBox.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.DateOfManufactureTextBox.Location = new System.Drawing.Point(386, 341);
+            this.DateOfManufactureTextBox.Location = new System.Drawing.Point(386, 334);
             this.DateOfManufactureTextBox.Mask = "00/00/0000";
             this.DateOfManufactureTextBox.Name = "DateOfManufactureTextBox";
             this.DateOfManufactureTextBox.Size = new System.Drawing.Size(97, 30);
@@ -277,7 +277,7 @@ namespace shelf_life_Form_App
             // ShelfLifeTextBox
             // 
             this.ShelfLifeTextBox.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ShelfLifeTextBox.Location = new System.Drawing.Point(386, 377);
+            this.ShelfLifeTextBox.Location = new System.Drawing.Point(386, 370);
             this.ShelfLifeTextBox.Mask = "00/00/0000";
             this.ShelfLifeTextBox.Name = "ShelfLifeTextBox";
             this.ShelfLifeTextBox.Size = new System.Drawing.Size(97, 30);
@@ -299,7 +299,7 @@ namespace shelf_life_Form_App
             // 
             this.PercentOfShelfLifeLabel.AutoSize = true;
             this.PercentOfShelfLifeLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PercentOfShelfLifeLabel.Location = new System.Drawing.Point(540, 380);
+            this.PercentOfShelfLifeLabel.Location = new System.Drawing.Point(540, 373);
             this.PercentOfShelfLifeLabel.Name = "PercentOfShelfLifeLabel";
             this.PercentOfShelfLifeLabel.Size = new System.Drawing.Size(0, 23);
             this.PercentOfShelfLifeLabel.TabIndex = 27;
@@ -308,7 +308,7 @@ namespace shelf_life_Form_App
             // 
             this.percentOfFoundDaysLabel.AutoSize = true;
             this.percentOfFoundDaysLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.percentOfFoundDaysLabel.Location = new System.Drawing.Point(845, 416);
+            this.percentOfFoundDaysLabel.Location = new System.Drawing.Point(845, 409);
             this.percentOfFoundDaysLabel.Name = "percentOfFoundDaysLabel";
             this.percentOfFoundDaysLabel.Size = new System.Drawing.Size(0, 23);
             this.percentOfFoundDaysLabel.TabIndex = 28;
@@ -317,7 +317,7 @@ namespace shelf_life_Form_App
             // 
             this.percentOfFoundMonthsLabel.AutoSize = true;
             this.percentOfFoundMonthsLabel.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.percentOfFoundMonthsLabel.Location = new System.Drawing.Point(845, 450);
+            this.percentOfFoundMonthsLabel.Location = new System.Drawing.Point(845, 443);
             this.percentOfFoundMonthsLabel.Name = "percentOfFoundMonthsLabel";
             this.percentOfFoundMonthsLabel.Size = new System.Drawing.Size(0, 23);
             this.percentOfFoundMonthsLabel.TabIndex = 29;

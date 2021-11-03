@@ -6,6 +6,7 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ApplicationIcon>Лого.ico</ApplicationIcon>
     <Authors>Michael Vogel</Authors>
+    <StartupObject>shelf_life_Form_App.Program</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
